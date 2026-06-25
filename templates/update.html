@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Eintrag ändern</title>
+</head>
+<body>
+    <h1>Vorhandenen Eintrag ändern</h1>
+
+    <form action="{{ url_for('update', post_id=blog['id']) }}" method="POST"> <!-- post_id wird mit blog[id] an die url geschickt -->
+        <label for="title">Titel:</label><br>
+        <input type="text" id="title" name="title" value="{{blog['title']}}"required><br><br>
+
+        <label for="author">Autor:</label><br>
+        <input type="text" id="author" name="author" value="{{blog['author']}}"required><br><br>
+
+        <label for="year">Jahr:</label><br>
+        <input type="number" id="year" name="year" value="{{blog['year']}}"><br><br>
+
+        <button type="submit">Änderung Speichern</button>
+    </form>
+
+    <p>
+        <a href="/">Zurück zur Startseite</a>
+    </p>
+</body>
+</html>
